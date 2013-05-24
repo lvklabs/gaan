@@ -9,4 +9,7 @@
 
   <!--Enable automatic exception tracking-->
   <bool name="ga_reportUncaughtExceptions">true</bool>
+  
+  <!--Dispatch period in seconds -->
+  <integer name="ga_dispatchPeriod">1</integer>
 </resources>
