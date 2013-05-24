@@ -30,9 +30,10 @@ public class MainActivity extends Activity {
 		super.onStart();
 		EasyTracker.getInstance().activityStart(this);
 
-		/////////////////////
+		///////////////////////
+		// Send some test data
 		testAnalytics();
-		/////////////////////
+		///////////////////////
 	}
 	
 	@Override
