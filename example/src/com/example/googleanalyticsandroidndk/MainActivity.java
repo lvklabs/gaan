@@ -9,7 +9,7 @@ import android.view.Menu;
 public class MainActivity extends Activity {
 
     static {
-        System.loadLibrary("hello");
+        System.loadLibrary("example");
     }
 	
 	@Override
@@ -29,6 +29,8 @@ public class MainActivity extends Activity {
 	public void onStart() {
 		super.onStart();
 		EasyTracker.getInstance().activityStart(this);
+		
+		testAnalytics();
 	}
 	
 	@Override
@@ -36,4 +38,6 @@ public class MainActivity extends Activity {
 		super.onStop();
 		EasyTracker.getInstance().activityStop(this);
 	}
+	
+	private static native void testAnalytics(); 
 }
