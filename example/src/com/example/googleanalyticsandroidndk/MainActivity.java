@@ -1,5 +1,7 @@
 package com.example.googleanalyticsandroidndk;
 
+import com.google.analytics.tracking.android.EasyTracker;
+
 import android.os.Bundle;
 import android.app.Activity;
 import android.view.Menu;
@@ -23,4 +25,15 @@ public class MainActivity extends Activity {
 		return true;
 	}
 
+	@Override
+	public void onStart() {
+		super.onStart();
+		EasyTracker.getInstance().activityStart(this);
+	}
+	
+	@Override
+	public void onStop() {
+		super.onStop();
+		EasyTracker.getInstance().activityStop(this);
+	}
 }
