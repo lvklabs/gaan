@@ -17,6 +17,11 @@ void Java_com_example_gaan_MainActivity_testAnalytics(JNIEnv* /*env*/, jobject /
     gaan::EasyTracker::sendEvent("TestCategory", "TestAction1", "TestLabel1", 123);
     gaan::EasyTracker::sendEvent("TestCategory", "TestAction1", "TestLabel2", 456);
     gaan::EasyTracker::sendEvent("TestCategory", "TestAction2", "TestLabel1", 789);
+
+    // send page views example:
+    gaan::EasyTracker::sendView("Splash");
+    gaan::EasyTracker::sendView("Main Menu");
+    gaan::EasyTracker::sendView("About");
 }
 
 } // extern "C"

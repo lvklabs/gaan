@@ -12,10 +12,14 @@ namespace gaan
 class EasyTracker
 {
 public:
+
     static void sendEvent(const std::string &category,
                           const std::string &action,
                           const std::string &label,
                           long value);
+
+
+    static void sendView(const std::string &appScreen);
 };
 
 } // namespace GoogleAnalytics
