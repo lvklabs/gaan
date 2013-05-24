@@ -11,7 +11,7 @@ jint JNI_OnLoad(JavaVM *jvm, void */*reserved*/)
     return JNI_VERSION_1_4;
 }
 
-void Java_com_example_googleanalyticsandroidndk_MainActivity_testAnalytics(JNIEnv* /*env*/, jobject /*thiz*/)
+void Java_com_example_gaan_MainActivity_testAnalytics(JNIEnv* /*env*/, jobject /*thiz*/)
 {
     // send events example:
     gaan::EasyTracker::sendEvent("TestCategory", "TestAction1", "TestLabel1", 123);
