@@ -1,6 +1,6 @@
-# GoogleAnalyticsAndroidNdk
+# gaan
 
-Android NDK wrapper for the Google Analytics API V2
+gaan (shor for _Google Analytics Android NDK_) is an Android NDK wrapper for the Google Analytics API V2
 
 _Why?_
 
