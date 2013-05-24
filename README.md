@@ -1,4 +1,4 @@
-## GoogleAnalyticsAndroidNdk
+# GoogleAnalyticsAndroidNdk
 
 Android NDK wrapper for the Google Analytics API V2
 
@@ -7,7 +7,7 @@ _Why?_
 This wrapper is intended for Android NDK apps that needs to invoke the Google Analytics API. 
 More notably are games written in C++ / Cocos2d-x as is my case ;)
 
-### Status
+## Status
 
 I've just started this project. Currently, only supports:
 
@@ -15,7 +15,7 @@ I've just started this project. Currently, only supports:
  - [Screen tracking](https://developers.google.com/analytics/devguides/collection/android/v2/screens)
 
 
-### Instructions
+## Instructions
 
 I asumme that you are familiar with Google Analytics API and Android NDK. If not, please read first:
 
@@ -33,8 +33,7 @@ Then add the JNI wrapper as follows:
 ```
 APP_STL += gnustl_static
 ```
-
-4. Edit `<yourproject>/jni/Android.mk` and add __two__ lines:
+4\. Edit `<yourproject>/jni/Android.mk` and add __two__ lines:
 
 ```
 LOCAL_WHOLE_STATIC_LIBRARIES += gaan 
@@ -44,8 +43,28 @@ $(call import-module, gaan)
 
 (Yes, the order is important!)
 
+5\. Initialize the `gaan::JniHelper` singleton by adding this to your `main.cpp` or equivalent file.
 
-### Example
+```
+#include "gaan/JniHelper.h"
+
+extern "C"
+{
+
+jint JNI_OnLoad(JavaVM *jvm, void */*reserved*/)
+{
+    gaan::JniHelper::setJvm(jvm);
+
+    return JNI_VERSION_1_4;
+}
+
+} // extern "C"
+
+```
+
+(If you already have a `JNI_OnLoad()` function just add `gaan::JniHelper::setJvm(jvm);`)
+
+## Example
 
 The `example/` directory contains an Eclipse project with a fully working example.
 
