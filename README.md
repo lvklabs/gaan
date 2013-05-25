@@ -5,7 +5,8 @@ gaan (shor for _Google Analytics Android NDK_) is an Android NDK wrapper for the
 _Why?_
 
 This wrapper is intended for Android NDK apps that needs to invoke the Google Analytics API. 
-More notably are games written in C++ / Cocos2d-x as is my case ;)
+More notably are games written in C++ / [Cocos2d-x](http://www.cocos2d-x.org/) as was my case 
+when I started this project ;)
 
 ## Status
 
