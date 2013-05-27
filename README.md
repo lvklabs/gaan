@@ -42,7 +42,7 @@ include $(BUILD_SHARED_LIBRARY)      # this line *already* exists in your file
 $(call import-module, gaan)          
 ```
 
-(Yes, the order is important!)
+Yes, the order is important!
 
 5\. Initialize the `gaan::JniHelper` singleton by adding this to your `main.cpp` or equivalent file.
 
@@ -63,7 +63,7 @@ jint JNI_OnLoad(JavaVM *jvm, void */*reserved*/)
 
 ```
 
-(If you already have a `JNI_OnLoad()` function just add `gaan::JniHelper::setJvm(jvm);`)
+If you already have a `JNI_OnLoad()` function just add `gaan::JniHelper::setJvm(jvm);`
 
 ## Example
 
